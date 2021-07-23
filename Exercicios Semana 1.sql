@@ -1,4 +1,4 @@
--- ####### Prática Stored Procedures ################
+-- ####### Prï¿½tica Stored Procedures ################
 
 --Exec 1
 
@@ -49,7 +49,6 @@
 
 
 --EXEC SP_UPTADE_STATUS Pedro
-
 
 
 

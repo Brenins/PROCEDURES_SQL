@@ -44,17 +44,5 @@
 --END
 
 --EXEC ALTERA_DEVOLUCAO; 
---SELECT * FROM locacao;
 
 
---Exercicio 3
-ALTER PROCEDURE SP_PESQUISA_FILME_TITULO (@titulo VARCHAR(100))
-AS
-BEGIN
-	SELECT 
-		FILME.descricao AS 'NOME'
-	FROM filme
-	WHERE FILME.descricao LIKE '%'+@titulo+'%'
-END
-
-EXEC SP_PESQUISA_FILME_TITULO Cassino
