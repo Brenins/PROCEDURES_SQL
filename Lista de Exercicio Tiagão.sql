@@ -22,3 +22,46 @@ BEGIN
 		f.descricao
 END */
 
+
+--02) Exiba todas as locações efetuadas por um determinando cliente. (Exibir o id, nome do cliente e quantidade de locações)
+
+/*
+CREATE PROCEDURE SP_QTD_LOCACOES_POR_CLIENTE (@texto varchar(100))
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        clienteId,
+        cliente.nome,
+        COUNT(clienteId) as QTD_Locacoes
+    FROM locacao
+    JOIN cliente
+        on locacao.clienteId = cliente.id
+    WHERE cliente.nome like '%'+@texto+'%'
+    GROUP BY
+        clienteId,
+        cliente.nome
+END
+
+EXEC SP_QTD_LOCACOES_POR_CLIENTE Pedro
+*/
+
+
+
+
+--exec 4
+SELECT 
+        clienteId,
+        cliente.nome,
+        COUNT(clienteId) as QTD_devolver
+    FROM locacao
+    JOIN cliente
+        on locacao.clienteId = cliente.id
+    WHERE dataDevolucao is NULL
+    GROUP BY
+        clienteId,
+        cliente.nome
+
+
+
