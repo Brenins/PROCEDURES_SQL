@@ -59,9 +59,7 @@ INNER JOIN filme f
 ON f.id = ft.filmeid
 INNER JOIN categoria cat
 ON cat.id = f.categoriaid
-where l.dataLocacao = datepart(mm, '2019-12-01')
-GROUP BY 
-    cat.id, cat.descricao,l.dataLocacao
+where MONTH(l.dataLocacao)
 
 
 --04) Listar quais clientes precisam devolver filmes.
